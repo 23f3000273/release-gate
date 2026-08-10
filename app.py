@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-
+@app.get("/")
+def health():
+    return {"status": "ok"}
 
 @app.post("/release-gate")
 def release_gate():
